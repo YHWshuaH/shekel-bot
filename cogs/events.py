@@ -4,7 +4,7 @@ from discord.ext import commands
 class Events(commands.Cog):
     def __init__(self, client):
         self.bot = client
-        print('Events Cog has been loaded')
+        print('-----\nEvents Cog has been loaded')
     
     @commands.Cog.listener()
     async def on_message(self,ctx):

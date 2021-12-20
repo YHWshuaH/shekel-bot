@@ -7,7 +7,7 @@ from cogs.commands import *
 from botconfig.definitions import *
 
 # Printing path to working directory
-print(f"-----\n{cwd} is the current working directory")
+print(f"{cwd} is the current working directory")
 #print(f"\n-----\n{pd} is the media directory")
 
 # Local variable declarations
@@ -18,7 +18,7 @@ bot.config_token = secret_file["token"]
 
 @bot.event
 async def on_ready():
-    print(f"\n-----\nLogged in as {bot.user}\n-----")
+    print(f"-----\nLogged in as {bot.user}")
     await bot.change_presence(activity=discord.Game("Ping me to find my prefix!"))
 
 @bot.event
