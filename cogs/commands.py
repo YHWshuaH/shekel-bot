@@ -52,22 +52,18 @@ class Groups(commands.Cog):
             async with session.get("https://www.reddit.com/search.json?q=boobs%20nsfw%3A1%20self%3A0&include_over_18=1") as resp:
                 #buffer = io.BytesIO(await resp.read())
                 res = await resp.json()
-                num=random.sample(range(100), 1)
-                num.replace('[', '')
-                num.replace(']','')
+                num=str(random.sample(range(25), 1)).strip('[]')
                 #num=random.randint(0,25)
+                """num.replace('[', '')
+                num.replace(']','')
                 addr=res['data']['children'][num]['data']['url']
                 if ".jpg" in addr or ".png" in addr:
                     embed.set_image(url=addr)
                     print(f'image addr:{addr}')
                     await ctx.send(embed=embed)
-                    #await ctx.send(addr)
-                    #await print('not image')
                 else:
                     print(f'not image {addr}')
-                    await ctx.send(addr)
-                    #await ctx.send(embed=embed)
-                    #await print('image')
+                    await ctx.send(addr)"""
 
                 print(num)      # For debugging/logging
 
