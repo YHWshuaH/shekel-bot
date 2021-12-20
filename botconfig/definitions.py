@@ -61,7 +61,7 @@ def f_dump_prefix(bot, message, arg1=None):
     with open(cwd + "/botconfig/metadata.json", "w") as f:
         json.dump(prefixes, f)
 
-async def update_url(arg1):        # func for updating the search term with suitable urlcode for special characters
+def update_url(arg1):        # func for updating the search term with suitable urlcode for special characters
     for i in url_encode:
         #print(url_encode[i])
         if i in arg1:
@@ -71,5 +71,5 @@ async def update_url(arg1):        # func for updating the search term with suit
             l = i
     arg1 = arg1.replace(i, l)
     return arg1
-#result = update_url("funky")
+#result = update_url("funky/")
 #print(result)

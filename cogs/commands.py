@@ -55,7 +55,7 @@ class Groups(commands.Cog):
                 num=int(str(random.sample(range(100), 1)).strip('[]'))
                 #num=random.randint(0,25)
                 addr=res['data']['children'][num]['data']['url']
-                if ".jpg" in addr or ".png" in addr:
+                if '.jpg' in addr or '.png' in addr:
                     embed.set_image(url=addr)
                     print(f'image addr:{addr}')
                     await ctx.send(embed=embed)
@@ -77,21 +77,22 @@ class Groups(commands.Cog):
     @commands.group(brief='Pulls an image/GIF result relevant to the provided search term', description='Queries reddit under the given search term and posts a random image result')
     async def img(self, ctx, arg1):
         if ctx.invoked_subcommand is None:
-            arg1 = update_url(arg1)    # Fetches string updated with urlcodes for special characters should they be input through arg1
             embed = discord.Embed(title='Scraping result:', description=f'Query: \"{arg1}\"')
             async with aiohttp.ClientSession() as session:
-                async with session.get(f"https://www.reddit.com/search.json?q={arg1}&sort=relevance") as resp:
+                async with session.get(f"https://www.reddit.com/search.json?q={update_url(arg1)}%20self%3A0&sort=relevance") as resp:
                     res = await resp.json()
-                    num=random.randint(0,25)
+                    num=int(str(random.sample(range(111), 1)).strip('[]'))
                     addr=res['data']['children'][num]['data']['url']
-                    embed.set_image(url=addr)
-                    if not "gif" in addr:
+                    if '.jpg' in addr or '.png' in addr:
+                        embed.set_image(url=addr)
+                        print(f'image addr:{addr}')
                         await ctx.send(embed=embed)
                     else:
+                        print(f'not image addr {addr}')
                         await ctx.send(addr)
                     
-                    print(num)   # for debugging x2
-                    print(addr)
+                    #print(num)   # for debugging x2
+                    #print(addr)
 
     @commands.command()
     async def greet(self, ctx):

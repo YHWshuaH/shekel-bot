@@ -2,7 +2,7 @@ import discord
 #import logging
 import json
 import os
-#from discord import message
+from discord import message
 from cogs.commands import *
 from botconfig.definitions import *
 
