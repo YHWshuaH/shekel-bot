@@ -53,8 +53,9 @@ class Groups(commands.Cog):
                 #buffer = io.BytesIO(await resp.read())
                 res = await resp.json()
                 num=random.sample(range(100), 1)
+                num.replace('[', '')
+                num.replace(']','')
                 #num=random.randint(0,25)
-                print(num)
                 addr=res['data']['children'][num]['data']['url']
                 if ".jpg" in addr or ".png" in addr:
                     embed.set_image(url=addr)
@@ -69,7 +70,6 @@ class Groups(commands.Cog):
                     #await print('image')
 
                 print(num)      # For debugging/logging
-                print(addr)
 
         #await ctx.send_file(channel, fp=buffer, filename="shekx")
 
