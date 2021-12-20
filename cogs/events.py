@@ -8,7 +8,7 @@ class Events(commands.Cog):
     
     @commands.Cog.listener()
     async def on_message(self,ctx):
-        if self.bot.user.mentioned_in(ctx):#and len(ctx.content.split(' ')) == 1 and ctx.content[-1] == '>' and ctx.content[0] == '<':
+        if self.bot.user.mentioned_in(ctx)and len(ctx.content.split(' ')) == 1 and ctx.content[-1] == '>' and ctx.content[0] == '<':
             await ctx.channel.send(f'Current command prefix is \"{f_get_prefix(self, ctx)}\".')
 
 def setup(bot):
