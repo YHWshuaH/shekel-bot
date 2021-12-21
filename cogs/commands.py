@@ -9,31 +9,6 @@ from botconfig.definitions import * #cwd, f_get_prefix, f_dump_prefix, update_ur
 import random
 #from hash import url_encode
 
-"""url_encode = {
-    " " : "%20",
-    "#" : "%23",
-    "$" : "%24",
-    "%" : "%25",
-    "&" : "%26",
-    "\'" : "%27",
-    "+" : "%2B",
-    "," : "%2C",
-    "/" : "%2F",
-    ":" : "%3A",
-    ";" : "%3B",
-    "=" : "%3D",
-    "?" : "%3F",
-    "@" : "%40",
-    "[" : "%5B",
-    "\\" : "%5C",
-    "]" : "%5D",
-    "^" : "%5E",
-    "`" : "%60",
-    "{" : "%7B",
-    "|" : "%7C",
-    "}" : "%7D"
-}"""
-
 # Commands cog
 class Groups(commands.Cog):
 
