@@ -56,7 +56,7 @@ class Groups(commands.Cog):
             async with aiohttp.ClientSession() as session:
                 async with session.get(f"https://www.reddit.com/search.json?q={update_url(arg1)}%20self%3A0&sort=relevance") as resp:
                     res = await resp.json()
-                    num=int(str(random.sample(range(111), 1)).strip('[]'))
+                    num=int(str(random.sample(range(20), 1)).strip('[]'))
                     addr=res['data']['children'][num]['data']['url']
                     if '.jpg' in addr or '.png' in addr:
                         embed.set_image(url=addr)
