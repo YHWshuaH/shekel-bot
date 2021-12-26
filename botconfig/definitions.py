@@ -37,7 +37,7 @@ url_encode = {
 # Homemade "endwith" function
 def f_endswith(string):
     strlength=len(string)
-    strlength = strlength-1
+    strlength -= 1
     array = [None]
     for i in string:
         array.append(i)
@@ -73,3 +73,4 @@ def update_url(arg1):        # func for updating the search term with suitable u
     return arg1
 #result = update_url("funky/")
 #print(result)
+

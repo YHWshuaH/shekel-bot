@@ -89,6 +89,16 @@ class Groups(commands.Cog):
             await ctx.send(f'Command prefix changed to default prefix, \"{f_get_prefix(self, ctx)}\".')
         else:
             await ctx.send(f'Command prefix changed to \"{f_get_prefix(self, ctx)}\".')
+    
+    @commands.group()
+    async def do(self, ctx):
+        None
+    
+    @do.command(name='-s', aliases=['--say'],brief='Echoes whatever follows the command.', description='Echoes text following the flag. Whitespace-delimited strings can be input as 1 argument (wrapped in quotes) or as their own arguments (naked string).')
+    async def echo(self, ctx, *arg):
+        arg = str(arg).strip('(\'\',)')
+        arg = arg.replace('\'', '')
+        await ctx.send()
 
 def setup(bot):
     bot.add_cog(Groups(bot))
